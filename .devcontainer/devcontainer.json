@@ -1,0 +1,14 @@
+{
+  "name": "ZMK Firmware Build",
+  "image": "zmkfirmware/zmk-dev-arm:3.5",
+  "remoteUser": "ubuntu",
+  "postCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/post-create.sh ${containerWorkspaceFolder}",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "trond-snekvik.devicetree"
+      ]
+    }
+  }
+}

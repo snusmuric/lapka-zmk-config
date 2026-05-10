@@ -6,7 +6,9 @@ ZMK_DIR="$WORKSPACE/zmk"
 
 echo "Updating Zephyr modules..."
 cd "$ZMK_DIR"
-west init -l app/
+if [ ! -d ".west" ]; then
+  west init -l app/
+fi
 west update
 
 echo ""

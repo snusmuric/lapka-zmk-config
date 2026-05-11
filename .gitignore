@@ -1,2 +1,5 @@
-
+.history
 .zmk/
+build/
+out/
+.idea/

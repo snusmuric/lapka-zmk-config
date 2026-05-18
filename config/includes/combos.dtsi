@@ -1,0 +1,313 @@
+#include "layers_definitions.dtsi"
+#include <dt-bindings/zmk/outputs.h>
+
+#define COMBO_TERM_FAST 35
+#define COMBO_TERM_SLOW 50
+#define COMBO_PRIOR_IDLE_FAST 10
+#define COMBO_PRIOR_IDLE_SLOW 100
+
+/ {
+	combos {
+		compatible = "zmk,combos";
+
+		combo_base_layer {
+			bindings = <&to BASE>;
+			key-positions = <LT4 LM4>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <BASE NUM NUM_RIGHT SYM FUNCT>;
+		};
+		
+		combo_undo {
+			bindings = <&kp LG(Z)>;
+			key-positions = <LM4 LB4>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+
+		combo_undo_right {
+			bindings = <&kp LG(Z)>;
+			key-positions = <RM4 RB4>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <BASE NUM NUM_RIGHT SYM FUNCT MOUSE>;
+		};
+		
+		combo_cut {
+			bindings = <&kp LG(X)>;
+			key-positions = <LM3 LB3>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+
+		combo_cut_right {
+			bindings = <&kp LG(X)>;
+			key-positions = <RM3 RB3>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <BASE NUM NUM_RIGHT SYM FUNCT MOUSE>;
+		};
+		
+		combo_copy {
+			bindings = <&kp LG(C)>;
+			key-positions = <LM2 LB2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+
+		combo_copy_right {
+			bindings = <&kp LG(C)>;
+			key-positions = <RM2 RB2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <BASE NUM NUM_RIGHT SYM FUNCT MOUSE>;
+		};
+
+		combo_paste {
+			bindings = <&kp LG(V)>;
+			key-positions = <LM1 LB1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+
+		combo_paste_right {
+			bindings = <&kp LG(V)>;
+			key-positions = <RM1 RB1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <BASE NUM NUM_RIGHT SYM FUNCT MOUSE>;
+		};
+		
+		combo_toggle_num_layer_left {
+			bindings = <&tog NUM>;
+			key-positions = <LB0 LH1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
+
+		combo_toggle_num_layer_right {
+			bindings = <&tog NUM_RIGHT>;
+			key-positions = <RB0 RH1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
+
+		combo_blank_right {
+			bindings = <&kp SPACE>;
+			key-positions = <RB1 RB2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
+
+		combo_tab_right {
+			bindings = <&kp TAB>;
+			key-positions = <RB0 RB1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
+
+		combo_esc_right {
+			bindings = <&kp ESC>;
+			key-positions = <RM0 RM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
+
+		// Enter combos
+		combo_enter_left {
+			bindings = <&kp ENTER>;
+			key-positions = <LM2 LM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE NUM NUM_RIGHT SYM NAV FUNCT MOUSE>;
+		};
+		
+		combo_enter_right {
+			bindings = <&kp ENTER>;
+			key-positions = <RM1 RM2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE NUM NUM_RIGHT SYM NAV FUNCT>;
+		};
+
+		// Hyper & Meh combos
+		combo_hyper_left {
+			bindings = <&sk LS(LC(LG(LALT)))>;
+			key-positions = <LT0 LM0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE>;
+		};
+
+		combo_meh_left {
+			bindings = <&sk LS(LC(LALT))>;
+			key-positions = <LT1 LM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE>;
+		};
+		
+		combo_hyper_right {
+			bindings = <&sk LS(LC(LG(LALT)))>;
+			key-positions = <RT0 RM0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE>;
+		};
+
+		combo_meh_right {
+			bindings = <&sk LS(LC(LALT))>;
+			key-positions = <RT1 RM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE>;
+		};
+
+		// F-keys combos for the Aerospace
+		combo_f16_right {
+			bindings = <&sk F16>;
+			key-positions = <RT1 RM0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE>;
+		};
+
+		combo_f17_right {
+			bindings = <&sk F17>;
+			key-positions = <RT2 RM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE>;
+		};
+
+		combo_f18_right {
+			bindings = <&sk F18>;
+			key-positions = <RT2 RM0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_SLOW>;
+			layers = <BASE>;
+		};
+
+		
+		// ---- screenshot combos Mac OS ----
+		combo_screenshot_to_file_mac {
+			bindings = <&kp LS(LG(N3))>;
+			key-positions = <LT4 LM4>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NAV>;
+		};
+
+		combo_screenshot_to_clipboard_mac {
+			bindings = <&kp LC(LS(LG(N3)))>;
+			key-positions = <LT3 LM3>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NAV>;
+		};
+
+		combo_screenshot_selected_area_to_file_mac {
+			bindings = <&kp LS(LG(N4))>;
+			key-positions = <LT2 LM2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NAV>;
+		};
+		
+		combo_screenshot_selected_area_to_clipboard_mac {
+			bindings = <&kp LC(LS(LG(N4)))>;
+			key-positions = <LT1 LM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NAV>;
+		};
+
+		combo_screenshot_tool_mac {
+			bindings = <&kp LS(LG(N5))>;
+			key-positions = <LT0 LM0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NAV>;
+		};
+		
+		// ---- screenshot combos Windows ----
+		combo_screenshot_screen_to_file_win {
+			bindings = <&kp LG(PRINTSCREEN)>;
+			key-positions = <RT0 RM0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NAV>;
+		};
+
+		combo_screenshot_screen_to_clipboard_win {
+			bindings = <&kp PRINTSCREEN>;
+			key-positions = <RT1 RM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NAV>;
+		};
+
+		combo_screenshot_tool_win {
+			bindings = <&kp LG(LS(S))>;
+			key-positions = <RT2 RM2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <NAV>;
+		};
+
+		combo_lang_switch_win {
+			bindings = <&kp LA(LSHIFT)>;
+			key-positions = <RM0 RB0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+
+		combo_lang_switch_mac {
+			bindings = <&kp LG(SPACE)>;
+			key-positions = <LM0 LB0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <BASE>;
+		};
+
+		// ---- intellij combos ----
+		combo_intellij_cmd_alt_b {
+			bindings = <&kp LG(LA(B))>;
+			key-positions = <LM0 LB0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <MOUSE>;
+		};
+
+		combo_intellij_methods_list {
+			bindings = <&kp LG(F12)>;
+			key-positions = <LT3 LM3>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <MOUSE>;
+		};
+
+		combo_intellij_format_code {
+			bindings = <&kp LG(LA(L))>;
+			key-positions = <LT1 LM1>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <MOUSE>;
+		};
+
+		combo_intellij_optimize_import {
+			bindings = <&kp LG(LA(O))>;
+			key-positions = <RT4 RM4>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <MOUSE>;
+		};
+
+		// ---- adjustment layer combos ----
+		combo_out_toggle__t_g {
+			bindings = <&out OUT_TOG>;
+			key-positions = <LT0 LM0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <ADJUST>;
+		};
+
+		combo_bt_clear_all__d_c {
+			bindings = <&out BT_CLR_ALL>;
+			key-positions = <LM2 LB2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			layers = <ADJUST>;
+		};
+
+	};
+};

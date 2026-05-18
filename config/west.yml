@@ -2,6 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: urob
+      url-base: https://github.com/urob
+    - name: elpekenin
+      url-base: https://github.com/elpekenin
   projects:
     - name: zmk
       remote: zmkfirmware

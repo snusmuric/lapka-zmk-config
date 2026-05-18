@@ -1,6 +1,6 @@
 {
   "name": "ZMK Firmware Build",
-  "image": "zmkfirmware/zmk-dev-arm:3.5",
+  "image": "zmkfirmware/zmk-dev-arm:4.1",
   "remoteUser": "ubuntu",
   "postCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/post-create.sh ${containerWorkspaceFolder}",
   "customizations": {

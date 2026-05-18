@@ -1,0 +1,304 @@
+#define TD_TAPPING_TERM 200
+#define TD_QUICK_TAPPING_TERM 150
+
+#include <dt-bindings/zmk/outputs.h>
+
+&lt {
+    quick_tap_ms = <TD_QUICK_TAPPING_TERM>;
+    tapping-term-ms = <TD_TAPPING_TERM>;
+    flavor = "hold-preferred";
+};
+
+&mmv {
+    time-to-max-speed-ms = <700>;
+    acceleration-exponent = <1>;
+};
+
+&msc {
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <0>;
+};
+
+&caps_word {
+    continue-list = <
+        UNDERSCORE
+        MINUS
+        BACKSPACE
+        DELETE
+        LEFT
+        RIGHT
+        UP
+        DOWN
+        RIGHT_SHIFT
+        LEFT_SHIFT
+        F17
+        F18
+    >;
+};
+
+&sl { release-after-ms = <2000>; };
+
+/ {
+    behaviors {
+
+        ht: ht {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
+            quick-tap-ms = <TD_QUICK_TAPPING_TERM>;
+            flavor = "tap-preferred";
+        };
+
+        ht_tog_layer: ht_tog_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TOG_LAYER_HOLD_KEY";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <0>;         // Disable quick tap
+            flavor = "hold-preferred";  // Hold takes precedence if held past tapping-term-ms
+            bindings = <&kp>, <&tog>;   // Hold: key, Tap: toggle layer
+        };
+
+        /*
+         * Auto Mod
+         *
+         * Usage: &am RPAR LPAR
+         * Tap: (
+         * Hold: )
+         *
+         * --
+         *
+         * Auto Shift
+         *
+         * Usage: AS(A)
+         * Tap: a
+         * Hold: A (shifted 'a')
+         */
+
+        am: auto_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        #define AM(hold_keycode, tap_keycode) &am hold_keycode tap_keycode
+        #define AS(keycode) &am LS(keycode) keycode
+
+        td_shift_l: td_shift_l {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
+            bindings = <&kp LEFT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
+        };
+
+        td_shift_r: td_shift_r {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
+            bindings = <&kp RIGHT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
+        };
+
+
+        /*
+        * Double Tap to clear BT
+        *
+        * Usage: &td_out_bt_clear
+        * Hold / Tap: Toggle output (USB or BT)
+        * Double Tap: Clear BT
+        */
+        td_out_bt_clear: td_out_bt_clear {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
+            bindings = <&out OUT_TOG>, <&bt BT_CLR>;
+        };
+
+        /*
+         * Shifted Space underscores + Layer Tap
+         *
+         * Usage: &mm_spc_unds_layer
+         * Tap: Space
+         * LShift-Tap: -
+         * RShift-Tap: _
+         * Hold: Switch layer
+         */
+        mm_spc_unds_layer: mod_morph_underscore {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&lt_l SYM SPACE>, <&kp MINUS>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT)>;
+        };
+
+       /*
+        * Layer Toggle
+        *
+        * Usage: &ltog LGUI NAV
+        * Tap: Layer Toggle
+        * Hold: Keypress
+        */
+        ltog: ltog {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <250>;
+            bindings = <&kp>, <&tog>;
+        };
+
+       /*
+        * Layer Sticky Key Tap Toggle
+        *
+        * Usage: &sklt NUM RSHFT
+        * Tap: Sticky Key
+        * Hold: Layer
+        */
+        sklt: sklt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            bindings = <&mo>, <&sk>;
+        };
+
+       /*
+        * Timerless Layer Tap
+        *
+        * Works similarly timerless homerow mods. It activates the
+        * layer hold immediately for keys on the right side.
+        */
+        lt_l: layer_tap_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+			quick-tap-ms = <160>;
+
+            // Activate layer function immediately if a key on the right
+            // side of the keyboard is used.
+            hold-trigger-key-positions = <KEYS_R>;
+            hold-trigger-on-release;
+
+            bindings = <&mo>, <&kp>;
+        };
+
+        lt_r: layer_tap_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+			quick-tap-ms = <160>;
+
+            // Activate layer function immediately if a key on the right
+            // side of the keyboard is used.
+            hold-trigger-key-positions = <KEYS_L>;
+
+            bindings = <&mo>, <&kp>;
+        };
+
+        // Hold - shift,
+        // tap - Backspace,
+        // Shifted Backspace - delete
+        ht_shift_bksp_del: ht_shift_bksp_del {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>,  <&mm_bksp_del_shifted>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <175>;// repeat on tap-into-hold
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        nav_shift: nav_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&mo>, <&sk>;
+        };
+
+        /*
+        * Tap dancing nav/shift
+        *
+        * Usage: &td_nav_shift_l
+        * Hold: Nav
+        * Tap: Sticky Shift
+        * Double Tap: Caps Word
+        */
+        td_nav_shift_l: td_nav_shift_l {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&nav_shift NAV LSHFT>, <&caps_word>;
+        };
+
+        td_hyper_capsword_l: td_hyper_capsword_l {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&sk LS(LC(LG(LALT)))>, <&caps_word>;
+        };
+
+        td_hyper_capsword_r: td_hyper_capsword_r {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&sk LS(LC(LG(LALT)))>, <&caps_word>;
+        };
+
+        td_sticky_shift_capsword_l: td_sticky_shift_capsword_l {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&sk LSHFT>, <&caps_word>;
+        };
+
+        td_sticky_shift_capsword_r: td_sticky_shift_capsword_r {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&sk RSHFT>, <&caps_word>;
+        };
+
+        /*
+        * Momentary Layer / To Layer
+        *
+        * Usage: &mo_to ADJUST 0
+        * Hold: Momentary layer (first parameter)
+        * Tap: Switch to layer (second parameter)
+        */
+        mo_to: mo_to {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <0>;
+            bindings = <&mo>, <&to>;
+        };
+    };
+
+       /*
+        * Custom Layer Tap for ESC/MOUSE
+        *
+        * Usage: &lt_esc_mouse MOUSE ESC
+        * Tap: ESC (immediate, responsive)
+        * Hold: MOUSE layer
+        */
+        lt_esc_mouse: lt_esc_mouse {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            quick_tap_ms = <TD_QUICK_TAPPING_TERM>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
+            bindings = <&mo>, <&kp>;
+        };
+};

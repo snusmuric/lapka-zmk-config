@@ -45,17 +45,17 @@
 #define RM3 18
 #define RM4 19
 
-#define LB1 24  // left-bottom row
-#define LB2 23
-#define LB3 22
-#define LB4 21
-#define LB5 20
+#define LB0 24  // left-bottom row
+#define LB1 23
+#define LB2 22
+#define LB3 21
+#define LB4 20
 
-#define RB1 25  // right-bottom row
-#define RB2 26
-#define RB3 27
-#define RB4 28
-#define RB5 29
+#define RB0 25  // right-bottom row
+#define RB1 26
+#define RB2 27
+#define RB3 28
+#define RB4 29
 
 #define LH0 32  // left thumb keys
 #define LH1 31

@@ -104,7 +104,8 @@
 			&kp Q                    &kp W            &kp E            &kp R                     &kp T                            &kp Y           &kp U                 &kp I          &kp O          &kp P
 			&hm_l LCTRL A            &hm_l LALT S     &hm_l LGUI D     &hm_shift_l LSHFT F       &kp G                            &kp H           &hm_shift_r RSHFT J   &hm_r RGUI K   &hm_r RALT  L  &hm_r RCTRL SEMI 
 			&kp Z                    &kp X            &kp C            &kp V                     &kp B                            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH 
-      &lt_esc_mouse MOUSE ESC  &ht LSHFT SPACE  &lt NAV TAB                                                                 &lt FUNCT DEL   &sk LS(LC(LALT))      &sk RSHFT
+      &lt_esc_mouse MOUSE ESC  &ht LSHFT SPACE  &lt NAV TAB                                                                 &sl SYM  &lt NUM BSPC  &lt FUNCT DEL
+
 			>;
 		};
 		
@@ -114,7 +115,7 @@
 			&kp KP_ASTERISK     &kp N7         &kp N8                &kp N9                &kp PLUS                               &kp PLUS      &kp N7                   &kp N8               &kp N9             &kp KP_ASTERISK
 			&hm_l LCTRL SLASH   &hm_l LALT N4  &hm_l LGUI N5         &hm_shift_l LSHFT N6  &kp MINUS                              &kp MINUS     &hm_shift_r RSHFT N4     &hm_r RGUI N5        &hm_r RALT N6      &hm_r RCTRL SLASH
 			&kp N0              &kp N1         &kp N2                &kp NUMBER_3          &kp DOT                                &kp DOT       &kp N1                   &kp N2               &kp N3             &kp N0
-			&trans  &trans  &trans                                                                                                &lt NUM BSPC  &trans  &trans
+			&trans  &trans  &trans                                                                                                &trans  &lt NUM BSPC  &trans
 			>;
 		};
 
@@ -134,7 +135,7 @@
 			&kp SQT                  &kp LESS_THAN         &kp GREATER_THAN        &kp DOUBLE_QUOTES       &kp DOT                &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT
 			&kp EXCLAMATION          &kp MINUS             &kp PLUS                &kp EQUAL               &kp HASH               &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION
 			&kp CARET                &kp SLASH             &kp ASTERISK            &kp BACKSLASH           &kp GRAVE              &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN
-      &trans  &to BASE  &trans  &trans                                                                                      &trans  &trans  &trans  &trans
+      &trans  &to BASE  &trans                                                                                              &trans  &trans  &trans
 			>;
 		};
 		
@@ -144,7 +145,7 @@
 			&none                      &none             &none                 &none                 &none                        &kp HOME         &kp PG_DN         &kp PG_UP            &kp END            &kp INSERT
 			&hm_l LCTRL A              &hm_l LALT S      &hm_l LGUI D          &hm_l LSHFT F         &to BASE                     &kp LEFT         &kp DOWN          &kp UP               &kp RIGHT          &none
 			&sk MY_HYPER_MINUS_SHIFT   &none             &sk MY_LEADER         &sk MY_MEH            &sk MY_HYPER                 &kp ESC          &kp ENTER         &none                &none              &sk MY_HYPER
-      &to BASE  &trans  &trans  &trans                                                                                      &trans  &trans  &trans
+      &to BASE  &trans  &trans                                                                                              &trans  &trans  &trans
 			>;
 		};
 
@@ -154,7 +155,7 @@
 			&kp LC(Q)               &kp LG(W)              &kp LG(LS(BACKSPACE))  &kp LS(F6)            &kp LG(LA(T))             &msc SCRL_LEFT   &msc SCRL_DOWN           &msc SCRL_UP         &msc SCRL_RIGHT    &none
 			&trans                  &trans                 &trans                 &trans                &kp LC(G)                 &mmv MOVE_LEFT   &mmv MOVE_DOWN           &mmv MOVE_UP         &mmv MOVE_RIGHT    &none
 			&kp LG(LS(SLASH))       &kp LG(SLASH)          &kp LA(LS(INSERT))     &mo MOUSE_SLOW        &mo MOUSE_FAST            &mkp MB4         &mkp MB5                 &none                &none              &none
-			&to BASE &trans  &trans  &trans                                                                                       &mkp LCLK   &mkp RCLK   &mkp MCLK
+			&to BASE &trans  &trans                                                                                               &mkp LCLK   &mkp RCLK   &mkp MCLK
 			>;
 		};
 		

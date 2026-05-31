@@ -265,6 +265,14 @@
 			layers = <BASE>;
 		};
 
+    combo_soft_off {
+			bindings = <&soft_off>;
+			key-positions = <RT4 RM4 RB4>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+			layers = <ADJUST>;
+    };
+
 		// ---- intellij combos ----
 		combo_intellij_cmd_alt_b {
 			bindings = <&kp LG(LA(B))>;

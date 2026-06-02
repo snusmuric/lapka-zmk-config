@@ -135,17 +135,17 @@
 			&kp SQT                  &kp LESS_THAN         &kp GREATER_THAN        &kp DOUBLE_QUOTES       &kp DOT                &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT
 			&kp EXCLAMATION          &kp MINUS             &kp PLUS                &kp EQUAL               &kp HASH               &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION
 			&kp CARET                &kp SLASH             &kp ASTERISK            &kp BACKSLASH           &kp GRAVE              &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN
-      &trans  &to BASE  &trans                                                                                              &trans  &trans  &trans
+      &kp ESC  &to BASE  &trans                                                                                             &trans  &trans  &trans
 			>;
 		};
 		
 		nav {
 			display-name = "Nav";
 			bindings = <
-			&none                      &none             &none                 &none                 &none                        &kp HOME         &kp PG_DN         &kp PG_UP            &kp END            &kp INSERT
+			&kp ESC                    &none             &none                 &none                 &none                        &kp HOME         &kp PG_DN         &kp PG_UP            &kp END            &kp INSERT
 			&hm_l LCTRL A              &hm_l LALT S      &hm_l LGUI D          &hm_l LSHFT F         &to BASE                     &kp LEFT         &kp DOWN          &kp UP               &kp RIGHT          &none
 			&sk MY_HYPER_MINUS_SHIFT   &none             &sk MY_LEADER         &sk MY_MEH            &sk MY_HYPER                 &kp ESC          &kp ENTER         &none                &none              &sk MY_HYPER
-      &to BASE  &trans  &trans                                                                                              &trans  &trans  &trans
+      &tran  &trans  &trans                                                                                                 &trans  &trans  &trans
 			>;
 		};
 

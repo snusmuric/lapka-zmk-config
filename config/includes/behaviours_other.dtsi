@@ -291,13 +291,15 @@
     };
 
        /*
-        * Custom Layer Tap for ESC/MOUSE
+        * Custom Layer Tap behaviour.
         *
-        * Usage: &lt_esc_mouse MOUSE ESC
-        * Tap: ESC (immediate, responsive)
+        * On tap it produces keypress, on hold - &mo layer.
+        * The difference from the &lt behaviour is that &lt_kp_mo is tap-preferred, but &lt is hold-preferred.
+        * Usage example: &lt_kp_mo MOUSE ESC
+        * Tap: kESC (immediate, responsive)
         * Hold: MOUSE layer
         */
-        lt_esc_mouse: lt_esc_mouse {
+        lt_kp_mo: lt_kp_mo {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -305,4 +307,23 @@
             tapping-term-ms = <TD_TAPPING_TERM>;
             bindings = <&mo>, <&kp>;
         };
+
+        /*
+        * Custom Layer Tap behaviour.
+        *
+        * On tap it produces sticky key (&sk), on hold - &mo layer.
+        *
+        * Usage example: &skl MOUSE LSHFT
+        * Tap: &sk LSHFT,
+        * Hold: MOUSE layer
+        */
+        skl:skl {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            quick_tap_ms = <TD_QUICK_TAPPING_TERM>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
+            bindings = <&mo>, <&sk>;
+        };
+
 };

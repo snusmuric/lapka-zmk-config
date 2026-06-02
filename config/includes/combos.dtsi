@@ -102,6 +102,13 @@
 			timeout-ms = <COMBO_TERM_FAST>;
 		};
 
+		combo_esc_left {
+			bindings = <&kp ESC>;
+			key-positions = <LM1 LM0>;
+			timeout-ms = <COMBO_TERM_FAST>;
+		};
+
+
 		combo_esc_right {
 			bindings = <&kp ESC>;
 			key-positions = <RM0 RM1>;

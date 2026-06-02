@@ -317,13 +317,28 @@
         * Tap: &sk LSHFT,
         * Hold: MOUSE layer
         */
-        skl:skl {
+        skl: skl {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             quick_tap_ms = <TD_QUICK_TAPPING_TERM>;
             tapping-term-ms = <TD_TAPPING_TERM>;
             bindings = <&mo>, <&sk>;
+        };
+
+        /*
+        * tap dancing mouse / sticky shift / caps word
+        *
+        * usage: &td_mouse_sk_capsword_l
+        * hold: mouse layer
+        * tap: sticky shift
+        * double tap: caps word
+        */
+        td_mouse_sticky_shift_capsword: td_mouse_sticky_shift_capsword {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
+            bindings = <&skl MOUSE LSHFT>, <&caps_word>;
         };
 
 };

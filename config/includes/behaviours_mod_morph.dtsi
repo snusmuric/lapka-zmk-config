@@ -373,28 +373,28 @@
         * Usage: &mm_bracket_c
         * Tap: {
         * Shift-Tap: }
-    * Hold: }
-    */
-    mm_bracket_c: mm_bracket_c {
-        compatible = "zmk,behavior-mod-morph";
-        #binding-cells = <0>;
-        bindings = <&am RBRC LBRC>, <&kp RBRC>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
+        * Hold: }
+        */
+        mm_bracket_c: mm_bracket_c {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&am RBRC LBRC>, <&kp RBRC>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
 
-    /*
-    * Angled Bracket
-    *
-    * Usage: &mm_bracket_a
-    * Tap: <
-    * Shift-Tap: >
-    * Hold: >
-    */
-    mm_bracket_a: mm_bracket_a {
-        compatible = "zmk,behavior-mod-morph";
-        #binding-cells = <0>;
-        bindings = <&am GT LT>, <&kp GT>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
+        /*
+        * Angled Bracket
+        *
+        * Usage: &mm_bracket_a
+        * Tap: <
+        * Shift-Tap: >
+        * Hold: >
+        */
+        mm_bracket_a: mm_bracket_a {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&am GT LT>, <&kp GT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
-};
 };

@@ -33,6 +33,9 @@
         LEFT_SHIFT
         F17
         F18
+        COMMA
+        DOT
+        SLASH
     >;
 };
 

@@ -3,7 +3,12 @@
 
 / {
     chosen {
+        zmk,battery = &lapka_vbatt;
         zmk,physical-layout = &default_layout;
+    };
+
+    lapka_vbatt: lapka-vbatt {
+        compatible = "zmk,battery-nrf-vddh";
     };
 
     kscan: kscan {

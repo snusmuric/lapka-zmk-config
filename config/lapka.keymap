@@ -104,7 +104,7 @@
 			&kp Q                    &kp W            &kp E            &kp R                     &kp T                            &kp Y           &kp U                 &kp I          &kp O          &kp P
 			&hm_l LCTRL A            &hm_l LALT S     &hm_l LGUI D     &hm_shift_l LSHFT F       &kp G                            &kp H           &hm_shift_r RSHFT J   &hm_r RGUI K   &hm_r RALT  L  &hm_r RCTRL SEMI 
 			&kp Z                    &kp X            &kp C            &kp V                     &kp B                            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH
-      &td_mouse_sticky_shift_capsword  &kp SPACE   &lt NAV TAB                                                              &sl SYM  &lt NUM BSPC  &lt FUNCT DEL
+      &mm_shift_caps_word_l  &kp SPACE   &lt NAV TAB                                                                        &sl SYM  &lt NUM BSPC  &lt FUNCT DEL
 			>;
 		};
 		

@@ -17,7 +17,14 @@
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 			layers = <BASE NUM NUM_RIGHT SYM FUNCT>;
 		};
-	
+
+		combo_mouse_layer {
+			bindings = <&mo MOUSE>;
+			key-positions = <LT4 LH2>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+
 		combo_undo {
 			bindings = <&kp LG(Z)>;
 			key-positions = <LM4 LB4>;

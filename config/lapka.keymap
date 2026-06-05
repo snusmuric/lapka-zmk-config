@@ -141,7 +141,7 @@
 		nav {
 			display-name = "Nav";
 			bindings = <
-			&kp ESC                    &none             &none                 &none                 &none                        &kp HOME         &kp PG_DN         &kp PG_UP            &kp END            &kp INSERT
+			&kp ESC                    &mo MOUSE         &none                 &none                 &none                        &kp HOME         &kp PG_DN         &kp PG_UP            &kp END            &kp INSERT
 			&hm_l LCTRL A              &hm_l LALT S      &hm_l LGUI D          &hm_l LSHFT F         &to BASE                     &kp LEFT         &kp DOWN          &kp UP               &kp RIGHT          &none
 			&sk MY_HYPER_MINUS_SHIFT   &none             &sk MY_LEADER         &sk MY_MEH            &sk MY_HYPER                 &kp ESC          &kp ENTER         &none                &none              &sk MY_HYPER
       &trans  &trans  &trans                                                                                                &trans  &trans  &trans

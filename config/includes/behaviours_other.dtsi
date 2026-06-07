@@ -180,7 +180,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
-			quick-tap-ms = <160>;
+            quick-tap-ms = <160>;
 
             // Activate layer function immediately if a key on the right
             // side of the keyboard is used.
@@ -195,7 +195,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
-			quick-tap-ms = <160>;
+            quick-tap-ms = <160>;
 
             // Activate layer function immediately if a key on the right
             // side of the keyboard is used.
@@ -288,7 +288,6 @@
             quick-tap-ms = <0>;
             bindings = <&mo>, <&to>;
         };
-    };
 
        /*
         * Custom Layer Tap behaviour.
@@ -340,5 +339,5 @@
             tapping-term-ms = <TD_TAPPING_TERM>;
             bindings = <&skl MOUSE LSHFT>, <&caps_word>;
         };
-
+    };
 };

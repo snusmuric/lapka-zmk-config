@@ -92,7 +92,7 @@
 #include "includes/behaviours_mod_morph.dtsi"
 #include "includes/layers_callbacks.dtsi"
 #include "includes/behaviours_other.dtsi"
-
+#include "includes/callum_mods.dtsi"
 
 / {
 	keymap {
@@ -104,7 +104,7 @@
 			&kp Q                    &kp W            &kp E            &kp R                     &kp T                            &kp Y           &kp U                 &kp I          &kp O          &kp P
 			&hm_l LCTRL A            &hm_l LALT S     &hm_l LGUI D     &hm_shift_l LSHFT F       &kp G                            &kp H           &hm_shift_r RSHFT J   &hm_r RGUI K   &hm_r RALT  L  &hm_r RCTRL SEMI 
 			&kp Z                    &kp X            &kp C            &kp V                     &kp B                            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH
-      &mm_shift_caps_word_l  &kp SPACE   &lt NAV TAB                                                                        &sl SYM  &lt NUM BSPC  &lt FUNCT DEL
+      &mm_shift_caps_word_l  &kp SPACE   &la NAV                                                                        &sl SYM  &lt NUM BSPC  &lt FUNCT DEL
 			>;
 		};
 		
@@ -142,8 +142,8 @@
 			display-name = "Nav";
 			bindings = <
 			&kp ESC                    &mo MOUSE         &none                 &none                 &none                        &kp HOME         &kp PG_DN         &kp PG_UP            &kp END            &kp INSERT
-			&hm_l LCTRL A              &hm_l LALT S      &hm_l LGUI D          &hm_l LSHFT F         &to BASE                     &kp LEFT         &kp DOWN          &kp UP               &kp RIGHT          &none
-			&sk MY_HYPER_MINUS_SHIFT   &none             &sk MY_LEADER         &sk MY_MEH            &sk MY_HYPER                 &kp ESC          &kp ENTER         &none                &none              &sk MY_HYPER
+			&cm_ctrl                   &cm_alt           &cm_gui               &cm_sft               &to BASE                     &kp LEFT         &kp DOWN          &kp UP               &kp RIGHT          &none
+			&sk MY_HYPER_MINUS_SHIFT   &none             &sk MY_LEADER         &sk MY_MEH            &sk MY_HYPER                 &kp TAB          &kp ENTER         &none                &none              &sk MY_HYPER
       &trans  &trans  &trans                                                                                                &trans  &trans  &trans
 			>;
 		};

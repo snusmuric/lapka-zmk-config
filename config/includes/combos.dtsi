@@ -10,14 +10,6 @@
 	combos {
 		compatible = "zmk,combos";
 
-		combo_esc_left_top {
-			bindings = <&kp ESC>;
-			key-positions = <LT4 LM4>;
-			timeout-ms = <COMBO_TERM_FAST>;
-			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
-			layers = <BASE NUM NUM_RIGHT SYM FUNCT>;
-		};
-
 		combo_mouse_layer {
 			bindings = <&mo MOUSE>;
 			key-positions = <LT4 LH2>;
@@ -108,13 +100,6 @@
 			key-positions = <RB0 RB1>;
 			timeout-ms = <COMBO_TERM_FAST>;
 		};
-
-		combo_esc_left {
-			bindings = <&kp ESC>;
-			key-positions = <LM1 LM0>;
-			timeout-ms = <COMBO_TERM_FAST>;
-		};
-
 
 		combo_esc_right {
 			bindings = <&kp ESC>;

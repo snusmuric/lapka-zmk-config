@@ -17,6 +17,14 @@
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
 		};
 
+    combo_select_all {
+			bindings = <&kp LG(A)>;
+			key-positions = <LT4 LM4>;
+			timeout-ms = <COMBO_TERM_FAST>;
+			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
+		};
+
+
 		combo_undo {
 			bindings = <&kp LG(Z)>;
 			key-positions = <LM4 LB4>;

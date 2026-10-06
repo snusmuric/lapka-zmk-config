@@ -53,8 +53,8 @@
 			wait-ms = <30>;
 			tap-ms = <30>;
 			bindings
-			= <&macro_tap &kp LG(SPACE)>
-			, <&macro_wait_time 100>
+			= <&macro_tap &kp LA(LG(SPACE))>
+			, <&macro_wait_time 300>
 			, <&macro_tap &kp LA(LSHIFT)>
 			;
 		};

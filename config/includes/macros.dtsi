@@ -46,5 +46,17 @@
 			, <&macro_release &kp LALT>
 			;
 		};
+
+		mac_win_lang_switch: mac_win_lang_switch {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			wait-ms = <30>;
+			tap-ms = <30>;
+			bindings
+			= <&macro_tap &kp LG(SPACE)>
+			, <&macro_wait_time 100>
+			, <&macro_tap &kp LA(LSHIFT)>
+			;
+		};
 	};
 };

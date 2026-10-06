@@ -267,7 +267,7 @@
 		};
 
 		combo_lang_switch_win {
-			bindings = <&kp LA(LSHIFT)>;
+			bindings = <&mac_win_lang_switch>;
 			key-positions = <RM0 RB0>;
 			timeout-ms = <COMBO_TERM_FAST>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;

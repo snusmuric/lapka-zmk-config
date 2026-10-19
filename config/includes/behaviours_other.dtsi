@@ -307,6 +307,23 @@
             bindings = <&mo>, <&kp>;
         };
 
+
+       /*
+        * Custom Layer Tap for ESC/MOUSE
+        *
+        * Usage: &lt_esc_mouse MOUSE ESC
+        * Tap: ESC (immediate, responsive)
+        * Hold: MOUSE layer
+        */
+        lt_esc_mouse: lt_esc_mouse {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            quick_tap_ms = <TD_QUICK_TAPPING_TERM>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
+            bindings = <&mo>, <&kp>;
+        };
+
         /*
         * Custom Layer Tap behaviour.
         *

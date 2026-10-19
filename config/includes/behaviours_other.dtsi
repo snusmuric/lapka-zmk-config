@@ -56,6 +56,25 @@
             flavor = "tap-preferred";
         };
 
+        // Dedicated hold-tap for space (Vim leader key):
+        // longer tapping term so 'not quite fast' taps still produce space.
+        // Usage: &ht_space LSHFT SPACE
+        // Tap: SPACE | Hold (300ms): LSHFT
+        ht_space: ht_space {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_SPACE";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            tapping-term-ms = <300>;
+            quick-tap-ms = <TD_QUICK_TAPPING_TERM>;
+            // "balanced" so holding space as shift + tapping a letter works;
+            // require-prior-idle guards against accidental shift when
+            // rolling space into the next letter.
+            flavor = "balanced";
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+        };
+
         ht_tog_layer: ht_tog_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "TOG_LAYER_HOLD_KEY";

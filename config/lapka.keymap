@@ -104,7 +104,7 @@
 			&kp Q                    &kp W            &kp E            &kp R                     &kp T                            &kp Y           &kp U                 &kp I          &kp O          &kp P
 			&hm_l LCTRL A            &hm_l LALT S     &hm_l LGUI D     &hm_shift_l LSHFT F       &kp G                            &kp H           &hm_shift_r RSHFT J   &hm_r RGUI K   &hm_r RALT  L  &hm_r RCTRL SEMI 
 			&kp Z                    &kp X            &kp C            &kp V                     &kp B                            &kp N           &kp M                 &kp COMMA      &kp DOT        &kp FSLH
-      &lt_esc_mouse MOUSE ESC  &ht_space LSHFT SPACE &lt NAV TAB                                                                 &sl SYM  &lt NUM BSPC  &lt FUNCT DEL
+      &lt_esc_mouse MOUSE ESC  &ht_space LSHFT SPACE &lt NAV TAB                                                            &sl SYM  &lt NUM BSPC  &lt FUNCT DEL
 			>;
 		};
 
@@ -141,10 +141,10 @@
 		sym_layer {
 			display-name = "Sym";
 			bindings = <
-			&kp SQT                  &kp LESS_THAN         &kp GREATER_THAN        &kp DOUBLE_QUOTES       &kp DOT                &kp AMPS   &kp SEMICOLON            &kp LEFT_BRACKET             &kp RIGHT_BRACKET             &kp PERCENT
-			&kp EXCLAMATION          &kp MINUS             &kp PLUS                &kp EQUAL               &kp HASH               &kp PIPE   &kp COLON                &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS         &kp QUESTION
-			&kp CARET                &kp SLASH             &kp ASTERISK            &kp BACKSLASH           &kp GRAVE              &kp TILDE  &kp DOLLAR               &kp LEFT_BRACE               &kp RIGHT_BRACE               &kp AT_SIGN
-      &kp ESC  &to BASE  &trans                                                                                             &trans  &trans  &trans
+			&kp SQT                          &kp LESS_THAN         &kp GREATER_THAN     &kp DOUBLE_QUOTES        &kp DOT                 &kp AMPS    &kp SEMICOLON              &kp LEFT_BRACKET              &kp RIGHT_BRACKET             &kp PERCENT
+			&hm_l LCTRL EXCLAMATION          &hm_l LALT MINUS      &hm_l LGUI PLUS      &hm_shift_l LSHFT EQUAL  &kp HASH                &kp PIPE    &hm_shift_r RSHFT COLON    &hm_r RGUI LEFT_PARENTHESIS   &hm_r RALT RIGHT_PARENTHESIS  &hm_r RCTRL QUESTION
+			&kp CARET                        &kp SLASH             &kp ASTERISK         &kp BACKSLASH            &kp GRAVE               &kp TILDE   &kp DOLLAR                 &kp LEFT_BRACE                &kp RIGHT_BRACE               &kp AT_SIGN
+      &kp ESC  &to BASE  &trans                                                                                                    &trans  &trans  &trans
 			>;
 		};
 		

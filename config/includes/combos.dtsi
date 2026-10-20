@@ -19,7 +19,7 @@
 
     combo_letters_layer {
 			bindings = <&mo LETTERS>;
-			key-positions = <RH2 LH0>;
+			key-positions = <RH2 RH1>;
 			timeout-ms = <COMBO_TERM_SLOW>;
 			require-prior-idle-ms = <COMBO_PRIOR_IDLE_FAST>;
       layers = <BASE>;
